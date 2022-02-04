@@ -1,13 +1,12 @@
-.main {
-    display: flex;
-    border: 1px solid black;
-    padding: 20px;
-    background-color: #ffffff;
-    justify-content: space-around;
-}
-
-.one {
-   height: 10px;
-   width: 10px;
-   background-color: black;
+.app-wrapper {
+   display: grid;
+   grid-template-rows: 150px 1fr;
+   grid-template-columns: 2fr 10fr;
+   /* grid-gap: 10px; */
+   grid-template-areas: 
+   "h h"
+   "n c"
+   ;
+   margin:  0 auto;
+   width: 1000px;
 }
