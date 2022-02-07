@@ -3,11 +3,11 @@ import classNav from "./Nav.module.css"
 
 const Nav = () => {
    return <nav className={classNav.nav}>
-   <div className={classNav.item}>
-      <a>Profile</a>
+   <div className={`${classNav.item}  ${classNav.active}`}>
+      <a href="/profile">Profile</a>
    </div>
    <div className={classNav.item}>
-      <a>Message</a>
+      <a href="/dialogs">Message</a>
    </div>
    <div className={classNav.item}>
       <a>News</a>
