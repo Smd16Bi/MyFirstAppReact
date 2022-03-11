@@ -1,0 +1,31 @@
+.discriptionBlock {
+   margin-top: 15px;
+   display: flex;
+   justify-content: space-around;
+   padding: 0 25px;
+   align-items: center;
+}
+
+.ava img {
+   width: 150px;
+   height: 150px;
+}
+
+.ava {
+   flex: 0 0 30%;
+}
+
+.dis {
+   flex: 0 0 70%;
+   font-size: 20px;
+   letter-spacing: 2px;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   text-shadow: 1px 1px 2px black;
+   color: #fff;
+}
+
+.image img {
+   width: 100%;
+   height: 100px;
+   border-radius: 25px 25px 0 0;
+}

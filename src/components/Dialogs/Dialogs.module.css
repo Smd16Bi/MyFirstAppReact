@@ -1,0 +1,45 @@
+.dialogs {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 100%;
+   max-width:  80%;
+   margin: 0 auto;
+}
+
+.dialogs_items {
+   padding: 10px;
+}
+
+.messages {
+   padding: 10px;
+}
+
+.dialog a:focus {
+   background-color: green;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+.form {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   
+}
+
+.form input:first-child {
+   border-radius: 5px;
+   border: none;
+   padding: 10px 15px;
+
+}
+
+.form input:last-child {
+   padding: 10px 15px;
+   background-color: aqua;
+   border: none;
+   border-radius:  5px;
+}

@@ -1,20 +1,44 @@
 import React from "react";
-import classPro from "./MyPosts.module.css"
+import { addPostCreateAction, newPostTextCreateAction } from "../../../redux/reducePostPage";
+import s from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
+const MyPosts = (props) => {
 
+   let postsElement = props.state.postData.map((elem) => {
+      return <Post message={elem.message} count={elem.count} ava={elem.ava} />
+   })
 
-const MyPosts = () => {
+   let newPostElement = React.createRef();
+
+   let addPost = () => {
+      props.dispath(addPostCreateAction())
+   }
+
+   let newPostText = () => {
+      let text = newPostElement.current.value;
+      props.dispath(newPostTextCreateAction(text))
+   }
+
    return (
-      <div>
+      <div className={s.postsBlock}>
          My posts
          <div>
-            <textarea></textarea>
-            <button>Add posts</button>
+            <div>
+               <textarea
+                  ref={newPostElement}
+                  value={props.state.newPost}
+                  onChange={newPostText}
+               />
+            </div>
+            <div>
+               <button onClick={addPost}>Add posts</button>
+            </div>
          </div>
-         <div className={classPro.posts}>
-            <Post message = "Hi how are you" count = "5"/>
-            <Post message = "I am fine and you" count = "2"/>
+         <div className={s.posts}>
+            <div className={s.item}>
+               {postsElement}
+            </div>
          </div>
       </div>
    )

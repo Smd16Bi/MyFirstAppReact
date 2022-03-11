@@ -2,10 +2,34 @@
    font-size: 16px;
    font-style: italic;
    color: tomato;
+   margin-top: 30px;
+   padding: 0 15px;
 }
 
 .item img {
    width: 80px;
    height: 80px;
-   border-radius: 30px;
+   border-radius: 25px;
+}
+
+.likes{
+   display: flex;
+   justify-content: right;
+}
+
+.likes span:first-child::before{
+   content: url("../Post/img/heart.png");
+   display: block;
+   width: 20px;
+   height: 20px;
+   padding: 0 10px 0 0;
+}
+.post {
+   display: flex;
+   align-items: center;
+   margin-bottom: 25px;
+   justify-content: space-between;
+   background-color: #fff;
+   border-radius: 25px ;
+   padding: 0 15px 0 0;
 }

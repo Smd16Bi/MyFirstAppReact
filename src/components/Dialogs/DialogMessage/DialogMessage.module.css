@@ -1,0 +1,31 @@
+.message {
+   margin: 0;
+   padding: 0;
+   border: 1px solid black;
+   color: #ffffff;
+   letter-spacing: 2px;
+   font-size: 20px;
+}
+
+.message:nth-child(odd) {
+   width: auto;
+   height: 20px;
+   margin: 15px 0;
+   border-radius: 10px 10px 10px 75px;
+   padding: 10px 25px;
+   line-height: 20px;
+   background-color: #c9c79b;
+   box-shadow: 1px 2px 5px black;
+}
+
+.message:nth-child(even) {
+   width: auto;
+   height: 20px;
+   line-height: 20px;
+   margin: 15px 0;
+   border-radius: 10px 15px 70px 10px;
+   padding: 10px 25px;
+   text-align: right;
+   background-color: #a7dbc8;
+   box-shadow: 1px 2px 5px black;
+}

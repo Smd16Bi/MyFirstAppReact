@@ -1,19 +1,29 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classNav from "./Nav.module.css"
+import OnlineF from "./OnlineF/OnlineF";
 
-const Nav = () => {
+
+const Nav = (props) => {
    return <nav className={classNav.nav}>
-   <div className={`${classNav.item}  ${classNav.active}`}>
-      <a href="/profile">Profile</a>
+   <div className={classNav.item}>
+      <NavLink to="/profile" className={navData => navData.isActive ? classNav.active:classNav.item} >Profile</NavLink>
    </div>
    <div className={classNav.item}>
-      <a href="/dialogs">Message</a>
+      <NavLink to="/dialogs" className={navData => navData.isActive ? classNav.active:classNav.item}>Message</NavLink>
    </div>
    <div className={classNav.item}>
-      <a>News</a>
+      <NavLink to="/news" className={navData => navData.isActive ? classNav.active:classNav.item}> News</NavLink>
    </div>
    <div className={classNav.item}>
-      <a>Music</a>
+      <NavLink to="/music" className={navData => navData.isActive ? classNav.active:classNav.item}>Music</NavLink>
+   </div>
+   <div className={classNav.item}>
+      <NavLink to="/setting" className={navData => navData.isActive ? classNav.active:classNav.item}>Setting</NavLink>
+   </div>
+
+   <div className={classNav.item}>
+      <OnlineF ava={props.state.avas} name={props.state.names}/>
    </div>
 </nav>
 }
