@@ -13,7 +13,27 @@ export let newMessagesCreateAction = (item) => {
    )
 }
 
-const reduceMessagePage = (state, action) => {
+let firstState = {
+   dialogsData: [
+      { id: 1, name: "Dimysh" },
+      { id: 2, name: "Anton" },
+      { id: 3, name: "Sveta" },
+      { id: 4, name: "Yara" },
+      { id: 5, name: "Pasa" },
+   ],
+
+   messagesData: [
+      { id: 1, message: "hi" },
+      { id: 2, message: "how are you" },
+      { id: 3, message: "yo" },
+      { id: 4, message: "yo" },
+      { id: 5, message: "yo" },
+   ],
+
+   newMessage: "",
+}
+
+const reduceMessagePage = (state = firstState, action) => {
    switch (action.type) {
       case addMess:
          let item = {
