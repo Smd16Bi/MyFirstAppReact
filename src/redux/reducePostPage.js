@@ -1,20 +1,8 @@
 const addPost = "addPost";
 const textPost = "textPost";
 
-export let addPostCreateAction = () => {
-   return (
-      { type: addPost }
-   )
-};
+let initialState = {
 
-export let newPostTextCreateAction = (text) => {
-   return (
-      { type: textPost, text: text }
-   )
-};
-
-
-let firstState = {
    postData: [
       { id: 1, count: 5, message: "Hi how are you", ava: "https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg" },
       { id: 2, count: 2, message: "I am fine and you", ava: "https://shapka-youtube.ru/wp-content/uploads/2021/02/prikolnaya-avatarka-dlya-patsanov.jpg" },
@@ -30,7 +18,7 @@ let firstState = {
    }
 }
 
-const reducePostPage = (state = firstState, action) => {
+const reducePostPage = (state = initialState, action) => {
 
    switch (action.type) {
       case addPost:
@@ -42,16 +30,26 @@ const reducePostPage = (state = firstState, action) => {
          }
          state.postData.push(newPost);
          state.newPost = "";
-         break;
+         return state;
 
       case textPost:
          state.newPost = action.text;
-         break;
+         return state;
       default:
          return state;
    }
-
-   return state
 }
+
+export let addPostCreateAction = () => {
+   return (
+      { type: addPost }
+   )
+};
+
+export let newPostTextCreateAction = (text) => {
+   return (
+      { type: textPost, text: text }
+   )
+};
 
 export default reducePostPage;

@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import store from './redux/store';
 import store from './redux/redux-store';
+
 
 let renderTree = (state) => {
    ReactDOM.render(
-      <React.StrictMode>
-         <App
+      <React.StrictMode >
+         <App 
             state={state}
-            dispath={store.dispath.bind(store)}
-         />
+            dispatch={store.dispatch.bind(store)} 
+            store={store}
+            />
       </React.StrictMode>,
       document.getElementById('root')
    );
@@ -20,7 +23,7 @@ let renderTree = (state) => {
 
 renderTree(store.getState());
 
-store.subscribe( () => {
+store.subscribe(() => {
    let state = store.getState();
    renderTree(state);
 })

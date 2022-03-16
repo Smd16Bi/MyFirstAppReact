@@ -7,30 +7,49 @@ import Music from './components/Music/Music.jsx';
 import Setting from './components/Setting/Setting.jsx';
 import News from './components/News/News.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = (props) => {
    return (
       <BrowserRouter>
          <div className='app-wrapper'>
             <Header />
-            <Nav state={props.state.navPage} />
+            <Nav
+               state={props.state.navPage}
+               dispatch={props.dispatch}
+            />
             <div className="app-wrapper-content">
                <Routes>
                   <Route
                      path="/profile/*"
                      element={<Profile
                         state={props.state.postPage}
-                        dispath={props.dispath}
+                        dispatch={props.dispatch}
+                        store={props.store}
                      />} />
                   <Route
                      path="/dialogs/*"
-                     element={<Dialogs
-                        state={props.state.messagePage}
-                        dispath={props.dispath}
+                     element={<DialogsContainer
+                        store={props.store}
                      />} />
-                  <Route path="/news/*" element={<News items={props.state.links} />} />
-                  <Route path="/music/*" element={<Music x={props.state.gremis} />} />
-                  <Route path="/setting/*" element={<Setting settings={props.state.settings} />} />
+                  <Route
+                     path="/news/*"
+                     element={<News
+                        state={props.state.links}
+                        dispatch={props.dispatch}
+                     />} />
+                  <Route
+                     path="/music/*"
+                     element={<Music
+                        state={props.state.gremis}
+                        dispatch={props.dispatch}
+                     />} />
+                  <Route
+                     path="/setting/*"
+                     element={<Setting
+                        state={props.state.settings}
+                        dispatch={props.dispatch}
+                     />} />
                </Routes>
             </div>
          </div>

@@ -97,7 +97,7 @@ let store = {
    },
 
 
-   dispath(action) {
+   dispatch(action) {
 
       this._state.postPage = reducePostPage(this._state.postPage, action);
       this._state.messagePage = reduceMessagePage(this._state.messagePage, action);

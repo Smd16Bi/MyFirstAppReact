@@ -1,23 +1,21 @@
 import React from "react";
-import { addPostCreateAction, newPostTextCreateAction } from "../../../redux/reducePostPage";
 import s from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-
-   let postsElement = props.state.postData.map((elem) => {
+   let postsElement = props.postData.map((elem) => {
       return <Post message={elem.message} count={elem.count} ava={elem.ava} />
    })
 
    let newPostElement = React.createRef();
 
    let addPost = () => {
-      props.dispath(addPostCreateAction())
+      props.addPost();
    }
 
    let newPostText = () => {
       let text = newPostElement.current.value;
-      props.dispath(newPostTextCreateAction(text))
+      props.newPostText(text)
    }
 
    return (
@@ -27,7 +25,7 @@ const MyPosts = (props) => {
             <div>
                <textarea
                   ref={newPostElement}
-                  value={props.state.newPost}
+                  value={props.newPost}
                   onChange={newPostText}
                />
             </div>

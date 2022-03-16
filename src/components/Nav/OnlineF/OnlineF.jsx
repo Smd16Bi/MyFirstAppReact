@@ -2,14 +2,14 @@ import React from "react";
 import s from "./OnlineF.module.css";
 
 const OnlineF = (props) => {
-   
-   let ava = props.ava.map(elem => {
+
+   let ava = props.state.avas.map(elem => {
       return <img src={elem.ava} />
 
    })
 
 
-   let name = props.name.map(elem => {
+   let name = props.state.names.map(elem => {
       return <span>{elem.name}</span>
    })
    return (

@@ -13,7 +13,8 @@ export let newMessagesCreateAction = (item) => {
    )
 }
 
-let firstState = {
+let initialState = {
+
    dialogsData: [
       { id: 1, name: "Dimysh" },
       { id: 2, name: "Anton" },
@@ -33,7 +34,9 @@ let firstState = {
    newMessage: "",
 }
 
-const reduceMessagePage = (state = firstState, action) => {
+
+
+const reduceMessagePage = (state = initialState, action) => {
    switch (action.type) {
       case addMess:
          let item = {
@@ -42,16 +45,16 @@ const reduceMessagePage = (state = firstState, action) => {
          }
          state.messagesData.push(item);
          state.newMessage = "";
-         break;
+         return state;
 
       case newMess:
          state.newMessage = action.text;
-         break;
+         return state;
       default:
          return state;
    }
-
-   return state
 }
+
+
 
 export default reduceMessagePage;

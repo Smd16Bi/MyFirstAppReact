@@ -1,14 +1,20 @@
-import { combineReducers, createStore} from "redux";
+import { createStore, combineReducers } from "redux";
 import reduceMessagePage from "./reduceMessagePage";
+import reduceMusic from "./reduceMusic";
+import reduceNavPage from "./reduceNavPage";
+import reduceNews from "./reduceNews";
 import reducePostPage from "./reducePostPage";
+import reduceSettings from "./reduceSetting";
 
-
-let redusers = combineReducers({
-   reduceMessagePage,
-   reducePostPage,
+let reducers = combineReducers({
+   messagePage: reduceMessagePage,
+   postPage: reducePostPage,
+   navPage: reduceNavPage,
+   links: reduceNews,
+   gremis: reduceMusic,
+   settings: reduceSettings,
 })
 
-let store = createStore(redusers);
+let store = createStore(reducers);
 
-
-export default store;
+export default store
