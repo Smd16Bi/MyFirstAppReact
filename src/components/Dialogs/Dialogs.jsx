@@ -6,11 +6,11 @@ import DialogMessage from "./DialogMessage/DialogMessage.jsx";
 const Dialogs = (props) => {
 
    let dialogsElements = props.dialogsData.map(elem => {
-      return <DialogItem name={elem.name} id={elem.id} />
+      return <DialogItem name={elem.name} id={elem.id} key={elem.id}/>
    })
 
    let messagesElements = props.messagesData.map(elem => {
-      return <DialogMessage message={elem.message} />
+      return <DialogMessage message={elem.message} key={elem.id}/>
    })
 
    let mess = React.createRef();

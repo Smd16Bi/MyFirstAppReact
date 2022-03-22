@@ -1,6 +1,7 @@
 const addMess = "addMess";
 const newMess = "newMess";
 
+
 export let addMessCreateAction = () => {
    return (
       { type: addMess }
@@ -38,18 +39,31 @@ let initialState = {
 
 const reduceMessagePage = (state = initialState, action) => {
    switch (action.type) {
-      case addMess:
-         let item = {
-            id: 1,
-            message: state.newMessage,
+      case addMess: {
+         // let item = {
+         //    id: 1,
+         //    message: state.newMessage,
+         // }
+         // let stateCopy = { ...state };
+         // stateCopy.messagesData = [ ...state.messagesData ];
+         // stateCopy.messagesData.push(item);
+         // stateCopy.newMessage = "";
+         // return stateCopy;
+         return {
+            ...state,
+            newMessage: "",
+            messagesData: [...state.messagesData, { id: 1, message: state.newMessage }]
          }
-         state.messagesData.push(item);
-         state.newMessage = "";
-         return state;
-
-      case newMess:
-         state.newMessage = action.text;
-         return state;
+      }
+      case newMess: {
+         // let stateCopy = { ...state };
+         // stateCopy.newMessage = action.text;
+         // return stateCopy;
+         return {
+            ...state,
+            newMessage: action.text,
+         };
+      }
       default:
          return state;
    }

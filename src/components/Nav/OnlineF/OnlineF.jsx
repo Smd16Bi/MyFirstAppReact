@@ -3,14 +3,14 @@ import s from "./OnlineF.module.css";
 
 const OnlineF = (props) => {
 
-   let ava = props.state.avas.map(elem => {
-      return <img src={elem.ava} />
+   let ava = props.ava.map(elem => {
+      return <img src={elem.ava} key={elem.id}/>
 
    })
 
 
-   let name = props.state.names.map(elem => {
-      return <span>{elem.name}</span>
+   let name = props.name.map(elem => {
+      return <span key={elem.id}>{elem.name}</span>
    })
    return (
       <div>

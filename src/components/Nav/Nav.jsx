@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import classNav from "./Nav.module.css"
-import OnlineF from "./OnlineF/OnlineF";
+import OnlineFContainer from "./OnlineF/OnlineFContainer";
 
 const Nav = (props) => {
 
@@ -23,7 +23,11 @@ const Nav = (props) => {
       </div>
 
       <div className={classNav.item}>
-         <OnlineF state={props.state} dispatch={props.dispatch}/>
+         <NavLink to="/users" className={navData => navData.isActive ? classNav.active : classNav.item}>Find user</NavLink>
+      </div>
+
+      <div className={classNav.item}>
+         <OnlineFContainer />
       </div>
    </nav>
 }

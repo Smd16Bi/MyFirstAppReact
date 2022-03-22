@@ -21,20 +21,34 @@ let initialState = {
 const reducePostPage = (state = initialState, action) => {
 
    switch (action.type) {
-      case addPost:
-         let newPost = {
-            id: 3,
-            message: state.newPost,
-            count: 0,
-            ava: state.dis.ava,
-         }
-         state.postData.push(newPost);
-         state.newPost = "";
-         return state;
+      case addPost: {
+         // let newPost = {
+         //    id: 3,
+         //    message: state.newPost,
+         //    count: 0,
+         //    ava: state.dis.ava,
+         // }
 
-      case textPost:
-         state.newPost = action.text;
-         return state;
+         // let stateCopy = { ...state }
+         // stateCopy.postData = [...state.postData];
+         // stateCopy.postData.push(newPost);
+         // stateCopy.newPost = "";
+         // return stateCopy;
+         return {
+            ...state,
+            newPost: "",
+            postData: [...state.postData, { id: 3, message: state.newPost, count: 0, ava: state.dis.ava }]
+         }
+      }
+      case textPost: {
+         // let stateCopy = { ...state }
+         // stateCopy.newPost = action.text;
+         // return stateCopy;
+         return {
+            ...state,
+            newPost: action.text
+         }
+      }
       default:
          return state;
    }

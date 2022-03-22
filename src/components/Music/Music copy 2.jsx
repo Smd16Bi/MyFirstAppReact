@@ -4,8 +4,8 @@ import classMusic from "./Music.module.css"
 
 const Music = (props) => {
 
-   let gremi = props.gremis.map(elem => {
-      return <ListMus singer={elem.singer} count={elem.count} key={elem.id}/>
+   let gremi = props.state.gremis.map(elem => {
+      return <ListMus singer={elem.singer} count={elem.count} />
    })
 
    return (

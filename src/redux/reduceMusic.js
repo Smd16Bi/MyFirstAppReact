@@ -2,12 +2,12 @@ const musicAction = "musicAction"
 
 let initialState = {
    gremis: [
-      { singer: "Eminem", count: "100" },
-      { singer: "AC/DC", count: "1000" },
-      { singer: "Madona", count: "12320" },
-      { singer: "50 cent", count: "102320" },
-      { singer: "Tupac", count: "100111" },
-      { singer: "Blala", count: "10034334" },
+      { singer: "Eminem", count: "100" ,id:1},
+      { singer: "AC/DC", count: "1000" ,id:2},
+      { singer: "Madona", count: "12320" ,id:3},
+      { singer: "50 cent", count: "102320" ,id:4},
+      { singer: "Tupac", count: "100111" ,id:5},
+      { singer: "Blala", count: "10034334" ,id:6},
    ]
 }
 

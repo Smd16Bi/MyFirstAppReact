@@ -11,12 +11,12 @@ const ProfileInfo = (props) => {
          </div>
          <div className={s.discriptionBlock}>
             <div className={s.ava}>
-               <img src={props.state.ava} />
+               <img src={props.ava} />
             </div>
             <div className={s.dis}>
-               <h2>{props.state.name}</h2>
-               <p>{props.state.age}</p>
-               <p>{props.state.city}</p>
+               <h2>{props.name}</h2>
+               <p>{props.age}</p>
+               <p>{props.city}</p>
             </div>
          </div>
       </div>

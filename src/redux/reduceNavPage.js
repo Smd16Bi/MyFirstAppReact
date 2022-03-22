@@ -3,16 +3,17 @@ const navAction = "navAction";
 let initialState = {
 
    avas: [
-      { ava: "https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg" },
-      { ava: "https://shapka-youtube.ru/wp-content/uploads/2021/02/prikolnaya-avatarka-dlya-patsanov.jpg" },
-      { ava: "https://shapka-youtube.ru/wp-content/uploads/2021/04/foto-parnya-na-avatarku.jpg" },
+      { ava: "https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg", id: 1 },
+      { ava: "https://shapka-youtube.ru/wp-content/uploads/2021/02/prikolnaya-avatarka-dlya-patsanov.jpg", id: 2 },
+      { ava: "https://shapka-youtube.ru/wp-content/uploads/2021/04/foto-parnya-na-avatarku.jpg", id: 3 },
    ],
 
    names: [
-      { name: "Dima" },
-      { name: "Pasha" },
-      { name: "Jora" },
+      { name: "Dima", id: 1 },
+      { name: "Pasha", id: 2 },
+      { name: "Jora", id: 3 },
    ],
+
 }
 
 const reduceNavPage = (state = initialState, action) => {

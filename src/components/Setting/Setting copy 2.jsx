@@ -4,8 +4,8 @@ import s from "./Setting.module.css"
 
 const Setting = (props) => {
 
-   let setting = props.settings.map(elem => {
-      return <Li to={elem.to} li={elem.li} key={elem.id} />
+   let setting = props.state.settings.map(elem => {
+      return <Li to={elem.to} li={elem.li} />
    })
    return (
       <div>
